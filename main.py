@@ -16,3 +16,6 @@ for link in contents:
     
     print(f"Link Text: {link_text}, Href: {link_href}")
 
+def get_pagination():
+    pagination_no = ""
+    print("there are: " + pagination_no + "are there")
