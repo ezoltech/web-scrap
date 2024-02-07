@@ -103,4 +103,4 @@ save_to_file(f"There are: {pagination_result} pages on {url}", file_name)
 
 
 
-            file.write("\n\n")  # Add some separation between articles
+file.write("\n\n")  # Add some separation between articles
