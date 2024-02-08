@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Scraped Data</title>
+  </head>
+  <body>
+    <div class="all">
+      <h1>Hello World</h1>
+      <form action="/scrape" method="post" id="scrapeForm">
+        <label for="url">Enter Website URL:</label><br />
+        <input type="text" id="url" name="url" required />
+        <input type="submit" value="Scrape Website" />
+      </form>
+
+      <div class="loader" id="loader"></div>
+
+     
+      <div id="result">
+        <h2>Scraped Result</h2>
+        <textarea id="scrapedData" rows="10" cols="50" readonly>
+{{ scraped_data }}</textarea
+        >
+        <br />
+        <button onclick="copyToClipboard()">Copy</button>
+        <button onclick="clearText()">Clear</button>
+        <button onclick="downloadTxt()">Download as TXT</button>
+        <a id="downloadLink" style="display: none">Download Link</a>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("scrapeForm")
+        .addEventListener("submit", function () {
+          document.getElementById("loader").style.display = "block";
+          document.getElementById("result").style.display = "none";
+        });
+
+      function copyToClipboard() {
+        var textArea = document.getElementById("scrapedData");
+        textArea.select();
+        document.execCommand("copy");
+      }
+
+      function clearText() {
+        document.getElementById("scrapedData").value = "";
+      }
+
+      function downloadTxt() {
+        var text = document.getElementById("scrapedData").value;
+        var blob = new Blob([text], { type: "text/plain" });
+        var url = window.URL.createObjectURL(blob);
+        var a = document.getElementById("downloadLink");
+        a.href = url;
+        a.download = "scraped_data.txt";
+        a.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

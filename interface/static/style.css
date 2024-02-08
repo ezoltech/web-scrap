@@ -1,0 +1,142 @@
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+/* Container Styles */
+.container {
+  background-color: #f0f2f5;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
+  padding: 40px;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* Header Styles */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px #babecc, 0px 0px 10px #ffffff;
+}
+
+input[type="submit"] {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Result Section Styles */
+#result {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Add margin bottom to create space between the form and the result section */
+}
+
+#result h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#scrapedData {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+#result button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#result button:hover {
+  background-color: #0056b3;
+}
+
+#downloadLink {
+  display: none;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+/* Loader Styles */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
